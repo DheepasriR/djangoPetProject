@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/main_page.css' %}">
+    <title>Trivia Trek</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="div1">
+            <img class="profile-img" src="{% static 'account.png' %}" alt="profile">
+            <p class="user-profile">{{user.username}}</p>
+        </div>
+        <h1>Tricky Traffic</h1>
+        <div class="div2">
+            <img class="log-out" src="{% static 'logout.png' %}" alt="Logout">
+            <a class="log-out-link" href="{% url 'base' %}">
+                <p class="log-out-button">Logout</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="image-link">
+        <a class="no-underline" href="{% url 'quiz' %}">  <!-- Link to start the quiz -->
+            <img src="../static/ideas.png" alt="Start Quiz">
+            <p class="no-underline">Start Quiz</p>
+        </a>
+    </div>
+    <div class="image-link">
+        <a class="no-underline" href="{% url 'score' %}">  <!-- Link to view scores -->
+            <img src="../static/ranking.png" alt="View Scores">
+            <p class="no-underline">View Scores</p>
+        </a>
+    </div>
+
+    <footer>
+        <p class="footer-text">&copy; 2023 Tricky Traffic</p>
+    </footer>
+</body>
+
+</html>
+

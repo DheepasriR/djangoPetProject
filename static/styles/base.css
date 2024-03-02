@@ -1,0 +1,92 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Verdana', sans-serif;
+}
+
+header {
+    background-color: #FEE715;
+    padding: 20px;
+    text-align: center;
+    }
+
+header h1 {
+    font-family: 'Monospaced', serif;
+    color: #101820;
+    margin: 0;
+    font-size: 3em;
+    }
+
+.content {
+    display: inline-block;
+    width: 60%;
+    /*border: solid black 2px;*/
+    margin-top: 3%;
+}
+
+.content h1 {
+    color: #101820;
+    text-align: left;
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
+    font-size: 2.5em;
+}
+
+.content h3 {
+    padding-right: 10%;
+    padding-left: 10%;
+    color: #FEE715;
+    text-align: left;
+}
+
+.buttons {
+    display: inline-block;
+    width: 30%;
+    padding-top: 0;
+    margin-top: 0;
+
+    text-align: center;
+}
+
+.button-link {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    margin: 5% auto;
+    padding: 10px 20px;
+    background-color: #FEE715;
+    color: #101820;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    }
+
+.button-link:hover {
+    background-color: #101820;
+    color: white;
+    }
+
+footer {
+    background-color: #101820;
+    color: #FEE715;
+    bottom: 0;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    }
+
+.footer-text {
+    margin: 0;
+    }
+
+
+/*Username: test_user1*/
+/*Email: test_user1@example.com*/
+/*Password: Test_Password@123*/
+
+/*username: DHEEPASRI*/
+/*password: TRCKYTRAFFIC*/

@@ -1,0 +1,110 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, serif;
+}
+
+header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #FEE715;
+    color: #101820;
+}
+
+h1 {
+    font-family: Monospaced, serif;
+    color: #101820;
+    margin: 0;
+    font-size: 3em;
+}
+
+.div1 {
+    margin-left: 2%;
+    display: flex;
+    align-items: center; /* Align items vertically in the flex container */
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Adjust margin to create space between image and text */
+}
+
+.user-profile {
+    display: inline;
+}
+
+.div2 {
+    margin-right: 4%;
+    display: flex;
+    align-items: center; /* Align items vertically in the flex container */
+}
+
+.log-out {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Adjust margin to create space between image and text */
+}
+
+.log-out-link {
+    text-decoration: none;
+    display: flex; /* Use flex display for the anchor element */
+    align-items: center; /* Align items vertically in the flex container */
+}
+
+.log-out-button {
+    color: #101820;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline;
+}
+
+.thank-you-container {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.quiz-button,
+.scores-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #101820;
+    background-color: #FEE715;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.quiz-button:hover,
+.scores-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.thank-you-gif {
+    width: 10%; /* Adjust the width as needed */
+    margin-top: 20px; /* Add some space below the text */
+}
+
+footer {
+    background-color: #101820;
+    color: #FEE715;
+    bottom: 0;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+}
+
+.footer-text {
+    margin: 0;
+}

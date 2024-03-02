@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Tricky Traffic</h1>
+    </header>
+
+    <div class="form-container">
+        <h2>Register</h2>
+
+        {% if messages %}  <!-- Check if there are messages to display -->
+          <ul class="messages">
+            {% for message in messages %} <!-- Loop through each message -->
+              <li{% if message.tags == 'success' %} class="success"{% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <form method="post"> <!-- Registration form -->
+          {% csrf_token %}  <!-- Include CSRF token for security -->
+          {{ form.username.label_tag }} {{ form.username }}<br><br>
+          {{ form.email.label_tag }} {{ form.email }}<br><br>
+          {{ form.password1.label_tag }} {{ form.password1 }}<br><br>
+          {{ form.password2.label_tag }} {{ form.password2 }}<br><br>
+          <button type="submit">Register</button>  <!-- Submit button for registration -->
+        </form>
+    </div>
+
+  <footer>
+        <p class="footer-text">&copy; 2023 Tricky Traffic</p>
+    </footer>
+
+</body>
+</html>
+
+

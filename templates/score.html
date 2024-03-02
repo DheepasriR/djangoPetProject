@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Score</title>
+    <link rel="stylesheet" href="{% static 'styles/score.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="div1">
+            <img class="profile-img" src="{% static 'account.png' %}" alt="profile">
+            <p class="user-profile">{{user.username}}</p>
+        </div>
+        <h1>Tricky Traffic</h1>
+        <div class="div2">
+            <img class="log-out" src="{% static 'logout.png' %}" alt="Logout">
+            <a class="log-out-link" href="{% url 'base' %}">
+                <p class="log-out-button">Logout</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="score-container">
+
+            <h2>Your Quiz Score</h2>
+            <p>Total Score: {{ total_score }}</p> <!-- Display the scores -->
+            <p>Average Score: {{ average_score|floatformat:2 }}%</p>
+            <p>Highest Score: {{ highest_score }}%</p>
+            <p>Lowest Score: {{ lowest_score }}%</p>
+            <br><br>
+            <h3>Quiz History</h3>
+            <ul>
+                {% for quiz in quizzes %} <!-- Loop through each quiz in the quizzes list -->
+                    <li>Quiz taken on: <break class="quiz-date">{{ quiz.quiz_taken_datetime|date:"F j, Y g:i A" }}<br> Score: {{ quiz.score }}  </li>
+                    <a href="{% url 'review_quiz' quiz.id %}">Review Quiz</a> <!-- Link to review the quiz -->
+                    <br><br>
+                {% endfor %}
+            </ul>
+
+            <a href="{% url 'quiz' %}" class="custom-button">Take Another Quiz</a>  <!-- Link to take another quiz -->
+
+    </div>
+
+   <footer>
+        <p class="footer-text">&copy; 2023 Tricky Traffic</p>
+    </footer>
+
+</body>
+</html>

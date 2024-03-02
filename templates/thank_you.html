@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'styles/thank_you.css' %}">
+</head>
+<body>
+
+<header>
+        <div class="div1">
+            <img class="profile-img" src="{% static 'account.png' %}" alt="profile">
+            <p class="user-profile">{{user.username}}</p>
+        </div>
+        <h1>Tricky Traffic</h1>
+        <div class="div2">
+            <img class="log-out" src="{% static 'logout.png' %}" alt="Logout">
+            <a class="log-out-link" href="{% url 'base' %}">
+                <p class="log-out-button">Logout</p>
+            </a>
+        </div>
+</header>
+
+    <div class="thank-you-container">
+        <img src="{% static 'fireworks.gif' %}" alt="Thank You GIF" class="thank-you-gif">
+        <h2>Thank you for taking the quiz!</h2>
+        <p>We appreciate your participation.</p>
+        <div class="button-container">
+            <a href="{% url 'quiz' %}" class="quiz-button">Take a New Quiz</a>
+            <a href="{% url 'score' %}" class="scores-button">View Scores</a>
+        </div>
+    </div>
+
+<footer>
+        <p class="footer-text">&copy; 2023 Tricky Traffic</p>
+    </footer>
+</body>
+</html>

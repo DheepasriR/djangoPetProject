@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+    <link rel="stylesheet" href="{% static 'styles/review_quiz.css' %}">
+</head>
+
+<body>
+    <header>
+            <div class="div1">
+                <img class="profile-img" src="{% static 'account.png' %}" alt="profile">
+                <p class="user-profile">{{user.username}}</p>
+            </div>
+            <h1>Tricky Traffic</h1>
+            <div class="div2">
+                <img class="log-out" src="{% static 'logout.png' %}" alt="Logout">
+                <a class="log-out-link" href="{% url 'base' %}">
+                    <p class="log-out-button">Logout</p>
+                </a>
+            </div>
+    </header>
+
+     <div class="quiz-container">
+        <h2>Quiz Review</h2>
+        <p>Total Score: {{ quiz.score }}</p> <!-- Display the total score -->
+
+        {% for answer in answers %} <!-- Loop through each answer in the answers list -->
+            <br><br>
+            <!-- Display the question number and text -->
+            <p style="font-weight: bold">Question {{ forloop.counter }}: {{ answer.question.text }}</p>
+            <p>Your Answer: {{ answer.selected_choice }}</p>
+            {% if answer.selected_choice == answer.question.correct_choice %}
+                <p style="color: green">Correct !</p>
+            {% else %}
+                <p style="color: red">Incorrect !!</p>
+                <p style="color: green">Correct Answer: {{ answer.question.correct_choice }}</p>
+            {% endif %}
+        {% endfor %}
+
+        <a href="{% url 'score' %}" class="btn">Go Back to Scores</a> <!-- Link to go back to the scores page -->
+     </div>
+
+<footer>
+    <p class="footer-text">&copy; 2023 Tricky Traffic</p>
+</footer>
+</body>
+</html>

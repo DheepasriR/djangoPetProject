@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{% static 'styles/quiz.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="div1">
+            <img class="profile-img" src="{% static 'account.png' %}" alt="profile">
+            <p class="user-profile">{{user.username}}</p>
+        </div>
+        <h1>Tricky Traffic</h1>
+        <div class="div2">
+            <img class="log-out" src="{% static 'logout.png' %}" alt="Logout">
+            <a class="log-out-link" href="{% url 'base' %}">
+                <p class="log-out-button">Logout</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="quiz-container">
+
+          <h2>Quiz</h2>
+          <form method="post" action="{% url 'quiz' %}">  <!-- Form to submit quiz answers -->
+            {% csrf_token %} <!-- Include CSRF token for security -->
+            {% for question in questions %} <!-- Loop through each question -->
+              <p>{{ question.text }}</p> <!-- Display the question text -->
+              <label><input type="radio" name="question_{{ question.id }}" value="{{ question.choice1 }}"> {{ question.choice1 }}</label><br>
+              <label><input type="radio" name="question_{{ question.id }}" value="{{ question.choice2 }}"> {{ question.choice2 }}</label><br>
+              <label><input type="radio" name="question_{{ question.id }}" value="{{ question.choice3 }}"> {{ question.choice3 }}</label><br>
+              <label><input type="radio" name="question_{{ question.id }}" value="{{ question.choice4 }}"> {{ question.choice4 }}</label><br>
+            {% endfor %}
+            <button type="submit">Submit</button> <!-- Submit button to submit the quiz -->
+          </form>
+
+    </div>
+
+<footer>
+        <p class="footer-text">&copy; 2023 Tricky Traffic</p>
+    </footer>
+
+</body>
+</html>

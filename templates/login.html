@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Tricky Traffic</h1>
+    </header>
+
+    {% block content %}
+        <div class="form-container">
+            <h2>Login</h2>
+              <form method="post">
+                {% csrf_token %}
+                {{ form.username.label_tag }} {{ form.username }}<br><br>
+                {{ form.password.label_tag }} {{ form.password }}<br><br>
+                <button type="submit">Login</button>
+              </form>
+        </div>
+    {% endblock %}
+
+    <footer>
+        <p class="footer-text">&copy; 2023 Tricky Traffic</p>
+    </footer>
+
+</body>
+</html>
